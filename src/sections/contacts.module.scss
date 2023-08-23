@@ -1,0 +1,92 @@
+@import "../app/mixins.scss";
+
+.section {
+    background: white;
+    @include respond('sm'){
+        padding-bottom: 0;
+    }
+    @include respond('md'){
+        padding-bottom: 0;
+    }
+    @include respond('pc'){
+        padding-bottom: 9rem;
+    }
+
+    &__header{
+        text-align: center;
+        position: relative;
+        margin-bottom: 3.6rem;
+        max-width: 960px;
+    }
+
+    &__content{
+        background: var(--black-light);
+        color: white;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include respond('md'){
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include respond('pc'){
+            flex-direction: row;
+            justify-content: space-between;
+            border-radius: .5rem;
+        }
+
+        .left, .contacts{
+            flex-grow: 1;
+            padding: 1rem;
+            @include respond('pc'){
+                padding: 2.5rem 2rem 3.5rem;
+            }
+        }
+
+        .contacts{
+            background: var(--black-light);
+
+            @include respond('pc'){
+                max-width: 30%;
+            }
+            &__list{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                &_item{
+                    @include respond('pc'){
+                        width: 50%;
+                    }
+                }
+                p{
+                    line-height: 2;
+                }
+            }
+        }
+
+        &_header{
+            position: relative;
+            margin-bottom: 1rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+        }
+
+        &__form{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            &_submit{
+                background: #39b54a;
+                border-color: #39b54a;
+                color: #FFFFFF;
+            }
+            .form_field{
+                color: var(--white-light);
+            }
+        }
+    }
+}
